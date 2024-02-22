@@ -9,14 +9,15 @@ async function main() {
     const args = parseArgs(Deno.args)
 
     // Handle the command
-    await handleCommand(args)
+    handleCommand(args)
 
     // Read from stdin for user input
     for await (const line of Deno.iter(Deno.stdin)) {
-        const input = new TextDecoder().decode(line).trim() // Convert Uint8Array to string and trim whitespace
-        await handleCommand({ _: [input] }) // Pass the user input as arguments
+        // Convert Uint8Array to string and trim whitespace
+        const input = new TextDecoder().decode(line).trim()
+        // Pass the user input as arguments
+        handleCommand({ _: [input] })
     }
 }
 
-// Call the main function
 main()
