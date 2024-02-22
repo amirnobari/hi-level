@@ -4,7 +4,7 @@ import { displayHelp } from "../commands/help.ts"
 import { displayStatus } from "../commands/status.ts"
 
 // Function to handle different commands
-export async function handleCommand(args: any) {
+export function handleCommand(args: any) {
     if (args._.includes("start")) {
         startFramework()
     } else if (args._.includes("stop")) {
