@@ -1,3 +1,4 @@
+// deno-lint-ignore-file
 import { startFramework } from "../commands/start.ts"
 import { stopFramework } from "../commands/stop.ts"
 import { displayHelp } from "../commands/help.ts"
